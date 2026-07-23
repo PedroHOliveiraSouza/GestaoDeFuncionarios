@@ -1,12 +1,12 @@
 package org.example;
 
-public class FuncionarioCLT extends Funcionario{
+public class FuncionarioCLT extends Funcionario implements Promovivel{
     private double valeTransporte;
     private double valeRefeicao;
 
 
 
-    public FuncionarioCLT(long id, String nome, String cpf, String dataAdmissao, String cargo, double salarioBase, double valeTransporte, double valeRefeicao) {
+    public FuncionarioCLT(long id, String nome, String cpf, String dataAdmissao, Cargo cargo, double salarioBase, double valeTransporte, double valeRefeicao) {
         super(id, nome, cpf, dataAdmissao, cargo, salarioBase);
         this.valeTransporte = valeTransporte;
         this.valeRefeicao = valeRefeicao;
@@ -52,5 +52,10 @@ public class FuncionarioCLT extends Funcionario{
 
     public void setValeRefeicao(double valeRefeicao) {
         this.valeRefeicao = valeRefeicao;
+    }
+
+    @Override
+    public void promover(Cargo novoCargo) {
+        setCargo(novoCargo);
     }
 }

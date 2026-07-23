@@ -10,17 +10,17 @@ public class Main {
         List<Funcionario> funcionarios = new ArrayList<>();
 
         funcionarios.add(new FuncionarioCLT(1, "Ana Silva", "111.111.111-11",
-                "2023-01-10", "Analista", 4500.00, 200.00, 300.00));
+                "2023-01-10",Cargo.DIRETOR, 4500.00, 200.00, 300.00));
 
         funcionarios.add(new FuncionarioPJ(2, "Bruno Costa", "222.222.222-22",
-                "2022-05-20", "Consultor", 6000.00, "12.345.678/0001-90", 6000.00));
+                "2022-05-20", Cargo.ANALISTA, 6000.00, "12.345.678/0001-90", 6000.00));
 
         funcionarios.add(new Estagiario(3, "Carla Souza", "333.333.333-33",
                 "2024-03-01", "Estagiária de TI", 1600.00,
                 "UCSal", "2025-12-31", 150.00));
 
         Gerente gerente = new Gerente(4, "Diego Alves", "444.444.444-44",
-                "2020-08-15", "Gerente de Projetos", 8000.00,300.00,500.00);
+                "2020-08-15", Cargo.GERENTE, 8000.00,300.00,500.00);
         gerente.setBonusPorMeta(1500.00);
         funcionarios.add(gerente);
 

@@ -5,10 +5,10 @@ public abstract class Funcionario {
     private String nome;
     private String cpf;
     private String dataAdmissao;
-    private String cargo;
+    private Cargo cargo;
     private double salarioBase;
 
-    public Funcionario(long id,String nome,String cpf,String dataAdmissao,String cargo,
+    public Funcionario(long id,String nome,String cpf,String dataAdmissao,Cargo cargo,
                        double salarioBase){
         this.id = id;
         this.nome = nome;
@@ -53,11 +53,11 @@ public abstract class Funcionario {
         this.dataAdmissao = dataAdmissao;
     }
 
-    public String getCargo() {
+    public Cargo getCargo() {
         return cargo;
     }
 
-    public void setCargo(String cargo) {
+    public void setCargo(Cargo cargo) {
         this.cargo = cargo;
     }
 

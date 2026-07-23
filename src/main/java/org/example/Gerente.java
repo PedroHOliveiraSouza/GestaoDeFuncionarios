@@ -10,7 +10,7 @@ public class Gerente extends FuncionarioCLT {
     private List<String> equipe = new ArrayList<>();
 
     public Gerente(long id, String nome, String cpf, String dataAdmissao,
-                   String cargo, double salarioBase,
+                   Cargo cargo, double salarioBase,
                    double valeTransporte, double valeRefeicao) {
         super(id, nome, cpf, dataAdmissao, cargo, salarioBase, valeTransporte, valeRefeicao);
     }
