@@ -6,7 +6,7 @@ public class Estagiario extends Funcionario {
     private int cargaHorariaSemanal = 30;
     private double valeTransporte;
 
-    public Estagiario(long id, String nome, String cpf, String dataAdmissao, String cargo,
+    public Estagiario(long id, String nome, String cpf, String dataAdmissao, Cargo cargo,
                       double salarioBase, String instituicaoEnsino, String dataFimEstagio,
                       double valeTransporte) {
         super(id, nome, cpf, dataAdmissao, cargo, salarioBase);
