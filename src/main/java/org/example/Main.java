@@ -1,5 +1,9 @@
 package org.example;
 
+import org.example.model.*;
+import org.example.service.ServicoEfetivacao;
+import org.example.ui.Menu;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,7 +15,7 @@ public class Main {
         List<Funcionario> funcionarios = new ArrayList<>();
 
         funcionarios.add(new FuncionarioCLT(1, "Ana Silva", "111.111.111-11",
-                "2023-01-10",Cargo.DIRETOR, 4500.00, 200.00, 300.00));
+                "2023-01-10", Cargo.DIRETOR, 4500.00, 200.00, 300.00));
 
         funcionarios.add(new FuncionarioPJ(2, "Bruno Costa", "222.222.222-22",
                 "2022-05-20", Cargo.ANALISTA, 6000.00, "12.345.678/0001-90", 6000.00));
