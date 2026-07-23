@@ -1,4 +1,4 @@
-package org.example;
+package org.example.model;
 
 public class Estagiario extends Funcionario {
     private String instituicaoEnsino;

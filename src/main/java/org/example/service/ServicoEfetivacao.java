@@ -1,4 +1,8 @@
-package org.example;
+package org.example.service;
+
+import org.example.model.Estagiario;
+import org.example.model.Funcionario;
+import org.example.model.FuncionarioCLT;
 
 import java.util.List;
 

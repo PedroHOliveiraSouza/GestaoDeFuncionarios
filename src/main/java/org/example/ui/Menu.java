@@ -1,4 +1,7 @@
-package org.example;
+package org.example.ui;
+
+import org.example.model.*;
+import org.example.service.ServicoEfetivacao;
 
 import java.util.ArrayList;
 import java.util.List;

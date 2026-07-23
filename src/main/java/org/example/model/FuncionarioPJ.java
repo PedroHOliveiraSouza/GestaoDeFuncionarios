@@ -1,9 +1,9 @@
-package org.example;
+package org.example.model;
 
 public class FuncionarioPJ extends Funcionario {
     private String cnpj;
     private double valorContrato;
-    public FuncionarioPJ(long id, String nome, String cpf, String dataAdmissao, Cargo cargo, double salarioBase, String cnpj,double valorContrato) {
+    public FuncionarioPJ(long id, String nome, String cpf, String dataAdmissao, Cargo cargo, double salarioBase, String cnpj, double valorContrato) {
         super(id, nome, cpf, dataAdmissao, cargo, salarioBase);
         this.cnpj = cnpj;
         this.valorContrato = valorContrato;

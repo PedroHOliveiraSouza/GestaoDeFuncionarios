@@ -1,4 +1,4 @@
-package org.example;
+package org.example.model;
 
 public abstract class Funcionario {
     private long id;

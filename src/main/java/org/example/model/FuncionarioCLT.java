@@ -1,6 +1,8 @@
-package org.example;
+package org.example.model;
 
-public class FuncionarioCLT extends Funcionario implements Promovivel{
+import org.example.interfaces.Promovivel;
+
+public class FuncionarioCLT extends Funcionario implements Promovivel {
     private double valeTransporte;
     private double valeRefeicao;
 
