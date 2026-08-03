@@ -1,40 +1,54 @@
 package org.example.model;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "funcionario")
+@Inheritance(strategy = InheritanceType.JOINED)
+@DiscriminatorColumn(name = "tipo_funcionario", discriminatorType = DiscriminatorType.STRING)
 public abstract class Funcionario {
-    private long id;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     private String nome;
+
     private String cpf;
+
     private String dataAdmissao;
+
+    @Enumerated(EnumType.STRING)
     private Cargo cargo;
+
     private double salarioBase;
 
-    public Funcionario(long id,String nome,String cpf,String dataAdmissao,Cargo cargo,
-                       double salarioBase){
-        this.id = id;
+    // Construtor vazio - o JPA exige um construtor sem argumentos
+    protected Funcionario() {
+    }
+
+    // Construtor com os dados, pra você usar ao criar objetos novos
+    protected Funcionario(String nome, String cpf, String dataAdmissao, Cargo cargo, double salarioBase) {
         this.nome = nome;
         this.cpf = cpf;
-        this.dataAdmissao =  dataAdmissao;
+        this.dataAdmissao = dataAdmissao;
         this.cargo = cargo;
         this.salarioBase = salarioBase;
     }
+
+    // Métodos abstratos - continuam exatamente como no seu projeto Java puro
     public abstract double calcularSalario();
     public abstract double calcularBeneficios();
     public abstract double calcularImpostos();
 
-    public String getCpf() {
-        return cpf;
+    // Método concreto, herdado por todo mundo
+    public String getDadosFuncionario() {
+        return "ID: " + id + " | Nome: " + nome + " | Cargo: " + cargo;
     }
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
-
-    public long getId() {
+    // Getters e Setters
+    public Long getId() {
         return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public String getNome() {
@@ -43,6 +57,14 @@ public abstract class Funcionario {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
 
     public String getDataAdmissao() {
@@ -67,9 +89,5 @@ public abstract class Funcionario {
 
     public void setSalarioBase(double salarioBase) {
         this.salarioBase = salarioBase;
-    }
-
-    public String getDadosFuncionario(){
-        return "ID: " + id + " | Nome: " + nome + " | Cargo: " + cargo;
     }
 }
