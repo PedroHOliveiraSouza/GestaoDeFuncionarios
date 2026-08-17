@@ -13,7 +13,6 @@ public class Estagiario extends Funcionario {
         this.instituicaoEnsino = instituicaoEnsino;
         this.dataFimEstagio = dataFimEstagio;
         this.valeTransporte = valeTransporte;
-        // cargaHorariaSemanal já nasce com 30 (valor padrão), sem precisar passar no construtor
     }
 
     @Override
