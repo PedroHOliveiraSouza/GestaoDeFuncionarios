@@ -147,8 +147,6 @@ public class Menu {
         System.out.println("Efetivado com sucesso: " + novoCLT.getDadosFuncionario());
     }
 
-    // ---- Métodos auxiliares de leitura ----
-
     private int lerInt(String mensagem) {
         System.out.print(mensagem);
         while (!scanner.hasNextInt()) {
