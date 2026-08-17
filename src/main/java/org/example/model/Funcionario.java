@@ -23,11 +23,9 @@ public abstract class Funcionario {
 
     private double salarioBase;
 
-    // Construtor vazio - o JPA exige um construtor sem argumentos
     protected Funcionario() {
     }
 
-    // Construtor com os dados, pra você usar ao criar objetos novos
     protected Funcionario(String nome, String cpf, String dataAdmissao, Cargo cargo, double salarioBase) {
         this.nome = nome;
         this.cpf = cpf;
@@ -36,17 +34,15 @@ public abstract class Funcionario {
         this.salarioBase = salarioBase;
     }
 
-    // Métodos abstratos - continuam exatamente como no seu projeto Java puro
     public abstract double calcularSalario();
     public abstract double calcularBeneficios();
     public abstract double calcularImpostos();
 
-    // Método concreto, herdado por todo mundo
     public String getDadosFuncionario() {
         return "ID: " + id + " | Nome: " + nome + " | Cargo: " + cargo;
     }
 
-    // Getters e Setters
+
     public Long getId() {
         return id;
     }
