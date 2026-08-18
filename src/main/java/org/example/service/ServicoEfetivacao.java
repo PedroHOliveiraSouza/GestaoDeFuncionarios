@@ -9,7 +9,6 @@ import java.util.List;
 public class ServicoEfetivacao {
     public static FuncionarioCLT efetivar(Estagiario estagiario, double valeRefeicao, List<Funcionario> funcionarios) {
         FuncionarioCLT novoCLT = new FuncionarioCLT(
-                estagiario.getId(),
                 estagiario.getNome(),
                 estagiario.getCpf(),
                 estagiario.getDataAdmissao(),

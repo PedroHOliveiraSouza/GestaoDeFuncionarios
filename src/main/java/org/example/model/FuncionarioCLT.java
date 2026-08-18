@@ -1,15 +1,23 @@
 package org.example.model;
 
-import org.example.interfaces.Promovivel;
+import jakarta.persistence.*;
 
-public class FuncionarioCLT extends Funcionario implements Promovivel {
+@Entity
+@Table(name = "funcionario_clt")
+@PrimaryKeyJoinColumn(name = "id")
+@DiscriminatorValue("CLT")
+public class FuncionarioCLT extends Funcionario {
+
     private double valeTransporte;
     private double valeRefeicao;
 
+    protected FuncionarioCLT() {
+        super();
+    }
 
-
-    public FuncionarioCLT(long id, String nome, String cpf, String dataAdmissao, Cargo cargo, double salarioBase, double valeTransporte, double valeRefeicao) {
-        super(id, nome, cpf, dataAdmissao, cargo, salarioBase);
+    public FuncionarioCLT(String nome, String cpf, String dataAdmissao, Cargo cargo,
+                          double salarioBase, double valeTransporte, double valeRefeicao) {
+        super(nome, cpf, dataAdmissao, cargo, salarioBase);
         this.valeTransporte = valeTransporte;
         this.valeRefeicao = valeRefeicao;
     }
@@ -28,7 +36,8 @@ public class FuncionarioCLT extends Funcionario implements Promovivel {
     public double calcularImpostos() {
         return calcularINSS(getSalarioBase());
     }
-    private double calcularINSS(double salario){
+
+    private double calcularINSS(double salario) {
         if (salario <= 1621.00) {
             return salario * 0.075;
         } else if (salario <= 2902.84) {
@@ -40,6 +49,7 @@ public class FuncionarioCLT extends Funcionario implements Promovivel {
             return Math.min(inss, 988.09);
         }
     }
+
     public double getValeTransporte() {
         return valeTransporte;
     }
@@ -54,10 +64,5 @@ public class FuncionarioCLT extends Funcionario implements Promovivel {
 
     public void setValeRefeicao(double valeRefeicao) {
         this.valeRefeicao = valeRefeicao;
-    }
-
-    @Override
-    public void promover(Cargo novoCargo) {
-        setCargo(novoCargo);
     }
 }

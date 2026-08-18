@@ -58,23 +58,23 @@ public class Menu {
             case 1 -> {
                 double vt = lerDouble("Vale transporte: ");
                 double vr = lerDouble("Vale refeição: ");
-                funcionarios.add(new FuncionarioCLT(id, nome, cpf, dataAdmissao, cargo, salarioBase, vt, vr));
+                funcionarios.add(new FuncionarioCLT( nome, cpf, dataAdmissao, cargo, salarioBase, vt, vr));
             }
             case 2 -> {
                 String cnpj = lerString("CNPJ: ");
                 double valorContrato = lerDouble("Valor do contrato: ");
-                funcionarios.add(new FuncionarioPJ(id, nome, cpf, dataAdmissao, cargo, salarioBase, cnpj, valorContrato));
+                funcionarios.add(new FuncionarioPJ(nome, cpf, dataAdmissao, cargo, salarioBase, cnpj, valorContrato));
             }
             case 3 -> {
                 String instituicao = lerString("Instituição de ensino: ");
                 String dataFim = lerString("Data fim do estágio (aaaa-mm-dd): ");
                 double vt = lerDouble("Vale transporte: ");
-                funcionarios.add(new Estagiario(id, nome, cpf, dataAdmissao, cargo, salarioBase, instituicao, dataFim, vt));
+                funcionarios.add(new Estagiario( nome, cpf, dataAdmissao, cargo, salarioBase, instituicao, dataFim, vt));
             }
             case 4 -> {
                 double valeTranspote = lerDouble("Vale transporte: ");
                 double valeRefeicao = lerDouble("Vale refeição: ");
-                Gerente gerente = new Gerente(id, nome, cpf, dataAdmissao, cargo, salarioBase,valeTranspote,valeRefeicao);
+                Gerente gerente = new Gerente(nome, cpf, dataAdmissao, cargo, salarioBase,valeTranspote,valeRefeicao);
                 double bonusPorMeta = lerDouble("Bônus por meta: ");
                 gerente.setBonusPorMeta(bonusPorMeta);
                 funcionarios.add(gerente);

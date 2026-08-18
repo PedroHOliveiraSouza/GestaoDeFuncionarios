@@ -6,10 +6,10 @@ public class Estagiario extends Funcionario {
     private int cargaHorariaSemanal = 30;
     private double valeTransporte;
 
-    public Estagiario(long id, String nome, String cpf, String dataAdmissao, Cargo cargo,
+    public Estagiario(String nome, String cpf, String dataAdmissao, Cargo cargo,
                       double salarioBase, String instituicaoEnsino, String dataFimEstagio,
                       double valeTransporte) {
-        super(id, nome, cpf, dataAdmissao, cargo, salarioBase);
+        super(nome, cpf, dataAdmissao, cargo, salarioBase);
         this.instituicaoEnsino = instituicaoEnsino;
         this.dataFimEstagio = dataFimEstagio;
         this.valeTransporte = valeTransporte;
