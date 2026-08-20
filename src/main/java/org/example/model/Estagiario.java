@@ -7,8 +7,7 @@ public class Estagiario extends Funcionario {
     private double valeTransporte;
 
     public Estagiario(String nome, String cpf, String dataAdmissao, Cargo cargo,
-                      double salarioBase, String instituicaoEnsino, String dataFimEstagio,
-                      double valeTransporte) {
+                      double salarioBase, String instituicaoEnsino, String dataFimEstagio, double valeTransporte) {
         super(nome, cpf, dataAdmissao, cargo, salarioBase);
         this.instituicaoEnsino = instituicaoEnsino;
         this.dataFimEstagio = dataFimEstagio;
