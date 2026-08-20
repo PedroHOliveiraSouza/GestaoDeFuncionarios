@@ -85,7 +85,7 @@ public class Menu {
     }
 
     private void listarFuncionarios() {
-        System.out.println("\n--- Lista de Funcionários ---");
+        System.out.println("\n  Lista de Funcionários  ");
         if (funcionarios.isEmpty()) {
             System.out.println("Nenhum funcionário cadastrado.");
             return;
@@ -95,7 +95,7 @@ public class Menu {
             System.out.println(f.getDadosFuncionario());
             System.out.printf("Salário: R$ %.2f | Benefícios: R$ %.2f | Impostos: R$ %.2f%n",
                     f.calcularSalario(), f.calcularBeneficios(), f.calcularImpostos());
-            System.out.println("-----------------------------");
+            System.out.println("\n");
         }
     }
 
@@ -118,7 +118,7 @@ public class Menu {
     }
 
     private void efetivarEstagiario() {
-        System.out.println("\n--- Efetivar Estagiário ---");
+        System.out.println("\n Efetivar Estagiário ");
         List<Estagiario> estagiarios = new ArrayList<>();
         for (Funcionario f : funcionarios) {
             if (f instanceof Estagiario e) {
