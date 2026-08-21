@@ -1,10 +1,24 @@
 package org.example.model;
 
+import jakarta.persistence.DiscriminatorValue;
+import jakarta.persistence.Entity;
+import jakarta.persistence.PrimaryKeyJoinColumn;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "estagiario")
+@PrimaryKeyJoinColumn(name = "id")
+@DiscriminatorValue("ESTAGIARIO")
+
 public class Estagiario extends Funcionario {
     private String instituicaoEnsino;
     private String dataFimEstagio;
     private int cargaHorariaSemanal = 30;
     private double valeTransporte;
+
+    protected Estagiario(){
+        super();
+    }
 
     public Estagiario(String nome, String cpf, String dataAdmissao, Cargo cargo,
                       double salarioBase, String instituicaoEnsino, String dataFimEstagio, double valeTransporte) {

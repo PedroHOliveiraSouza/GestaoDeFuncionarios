@@ -1,8 +1,22 @@
 package org.example.model;
 
+import jakarta.persistence.DiscriminatorValue;
+import jakarta.persistence.Entity;
+import jakarta.persistence.PrimaryKeyJoinColumn;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "funcionario_pj")
+@PrimaryKeyJoinColumn(name = "id")
+@DiscriminatorValue("PJ")
+
 public class FuncionarioPJ extends Funcionario {
     private String cnpj;
     private double valorContrato;
+
+   protected FuncionarioPJ(){
+       super();
+   }
     public FuncionarioPJ(String nome, String cpf, String dataAdmissao, Cargo cargo, double salarioBase, String cnpj, double valorContrato) {
         super(nome, cpf, dataAdmissao, cargo, salarioBase);
         this.cnpj = cnpj;
