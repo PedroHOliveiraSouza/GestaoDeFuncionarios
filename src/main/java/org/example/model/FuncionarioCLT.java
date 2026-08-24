@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 @Table(name = "funcionario_clt")
 @PrimaryKeyJoinColumn(name = "id")
 @DiscriminatorValue("CLT")
+
 public class FuncionarioCLT extends Funcionario {
 
     private double valeTransporte;
