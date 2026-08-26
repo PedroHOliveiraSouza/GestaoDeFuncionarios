@@ -42,7 +42,6 @@ public class Main {
             System.out.printf("Benefícios: R$ %.2f%n", f.calcularBeneficios());
             System.out.printf("Impostos: R$ %.2f%n", f.calcularImpostos());
             System.out.println();
-            System.out.println("oi ");
         }
     }
 }
