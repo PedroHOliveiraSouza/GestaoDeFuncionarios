@@ -1,7 +1,14 @@
 package org.example.model;
-
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import jakarta.persistence.*;
-
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "tipo")
+@JsonSubTypes({
+        @JsonSubTypes.Type(value = FuncionarioCLT.class, name = "CLT"),
+        @JsonSubTypes.Type(value = FuncionarioPJ.class, name = "PJ"),
+        @JsonSubTypes.Type(value = Estagiario.class, name = "ESTAGIARIO"),
+        @JsonSubTypes.Type(value = Gerente.class, name = "GERENTE")
+})
 @Entity
 @Table(name = "funcionario")
 @Inheritance(strategy = InheritanceType.JOINED)
