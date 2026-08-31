@@ -1,7 +1,12 @@
 package org.example.model;
+
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
+
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "tipo")
 @JsonSubTypes({
         @JsonSubTypes.Type(value = FuncionarioCLT.class, name = "CLT"),
@@ -19,19 +24,21 @@ public abstract class Funcionario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank(message = "O nome é obrigatório")
     private String nome;
 
+    @NotBlank(message = "O CPF é obrigatório")
     private String cpf;
 
+    @NotBlank(message = "A data de admissão é obrigatória")
     private String dataAdmissao;
 
+    @NotNull(message = "O cargo é obrigatório")
     @Enumerated(EnumType.STRING)
     private Cargo cargo;
 
+    @Positive(message = "O salário base deve ser maior que zero")
     private double salarioBase;
-
-    protected Funcionario() {
-    }
 
     protected Funcionario(String nome, String cpf, String dataAdmissao, Cargo cargo, double salarioBase) {
         this.nome = nome;
@@ -48,7 +55,6 @@ public abstract class Funcionario {
     public String getDadosFuncionario() {
         return "ID: " + id + " | Nome: " + nome + " | Cargo: " + cargo;
     }
-
 
     public Long getId() {
         return id;
