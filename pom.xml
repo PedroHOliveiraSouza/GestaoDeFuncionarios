@@ -11,7 +11,7 @@
         <relativePath/>
     </parent>
 
-    <groupId>org.example</groupId>
+    <groupId>io.github.pedrohsouza</groupId>
     <artifactId>GestaoDeFuncionarios</artifactId>
     <version>1.0-SNAPSHOT</version>
 
