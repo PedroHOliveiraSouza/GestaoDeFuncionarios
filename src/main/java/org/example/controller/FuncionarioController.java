@@ -1,5 +1,6 @@
 package org.example.controller;
 
+import jakarta.validation.Valid;
 import org.example.model.Funcionario;
 import org.example.model.FuncionarioCLT;
 import org.example.service.FuncionarioService;
@@ -20,7 +21,7 @@ public class FuncionarioController {
     }
 
     @PostMapping
-    public ResponseEntity<Funcionario> cadastrar(@RequestBody Funcionario funcionario) {
+    public ResponseEntity<Funcionario> cadastrar(@Valid @RequestBody Funcionario funcionario) {
         Funcionario salvo = funcionarioService.cadastrar(funcionario);
         return ResponseEntity.status(HttpStatus.CREATED).body(salvo);
     }
