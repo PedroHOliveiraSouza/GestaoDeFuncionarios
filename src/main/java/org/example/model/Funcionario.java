@@ -39,7 +39,8 @@ public abstract class Funcionario {
 
     @Positive(message = "O salário base deve ser maior que zero")
     private double salarioBase;
-
+    protected Funcionario() {
+    }
     protected Funcionario(String nome, String cpf, String dataAdmissao, Cargo cargo, double salarioBase) {
         this.nome = nome;
         this.cpf = cpf;
