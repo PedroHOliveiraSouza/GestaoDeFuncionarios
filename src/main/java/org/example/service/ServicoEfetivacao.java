@@ -21,7 +21,7 @@ public class ServicoEfetivacao {
         funcionarios.remove(estagiario);
         funcionarios.add(novoCLT);
 
-        return null;
+        return novoCLT;
     }
 }
 
